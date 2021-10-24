@@ -11,6 +11,7 @@ public class CommandHandlerImpl implements CommandHandler {
 
     @Override
     public CommandResult execute(String request) throws InvalidCommandArgumentsException, InvalidCommandException {
+        // the first word is a command name, remaining words - arguments
         String[] parts = request.split("\\s+");
 
         String commandName = parts[0];

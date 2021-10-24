@@ -42,8 +42,10 @@ public class RequestThread implements Runnable {
 
             out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
 
+            // 0 - finished without problems, 1 - there is some problem
             String statusInfo = isSuccessful ? "0" : "1";
 
+            // send response as status/message
             String response = statusInfo + "/" + answerMessage;
             System.out.println("Response: " + response);
 

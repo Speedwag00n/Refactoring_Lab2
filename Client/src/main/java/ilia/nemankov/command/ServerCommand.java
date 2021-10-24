@@ -23,6 +23,7 @@ public abstract class ServerCommand extends Command {
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             String answer = in.readLine();
 
+            // receive response as status/message
             String[] answerParts = answer.split("/", 2);
 
             result.setSuccessful(answerParts[0].equals("0"));
